@@ -1,5 +1,8 @@
+/home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/common/ExceptionController.java
 /home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/todo/Todo.java
 /home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/todo/TodoController.java
+/home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/todo/TodoRestController.java
 /home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/todo/TodoService.java
-/home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/login/LoginService.java
-/home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/login/LoginController.java
+/home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/security/SecurityConfiguration.java
+/home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/login/LogoutController.java
+/home/antonio/Downloads/Spring-MVC/src/main/java/com/in28minutes/login/WelcomeController.java
