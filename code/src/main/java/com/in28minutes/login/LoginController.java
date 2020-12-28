@@ -6,48 +6,28 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("name")
 public class LoginController {
-	
-	//instantiate automatically
+
 	@Autowired
-	LoginService service;
-	
-	@RequestMapping(value="/login", method = RequestMethod.GET)
+	private LoginService loginService;
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage() {
 		return "login";
 	}
-	
-	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String handlerLoginRequest(
-			@RequestParam String name, 
-			@RequestParam String password, 
-			ModelMap model) {
-		
-		if (service.validateUser(name, password)){
-			model.put("name", name); //availabele to the view
-			model.put("password", password);
-			return "welcome";
-		} else {
-			model.put("errorMessage", "Invalid Credentials!!");
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String handleUserLogin(ModelMap model, @RequestParam String name,
+			@RequestParam String password) {
+		if (!loginService.validateUser(name, password)) {
+			model.put("errorMessage", "Invalid Credentials");
 			return "login";
 		}
+		model.put("name", name);
+		return "welcome";
 	}
 }
-
-/*
- * 
- * localhost:8080/spring-mvc/login
- * 
- * spring-mvc ---> Dispatcher Servlet - > front-contoller
- * 
- * /login ----> Login Controller (Handler)
- * 
- * View Resolver
- * login -> /WEB-INF/views/login.jsp
- * 
- * login.jsp - > VIEW
- * 
- *   /WEB-INF/views/login.jsp
- */
