@@ -55,3 +55,4 @@ The Back-end of the project was developed using Java with Spring MVC. The front-
 <!-- HOW TO RUN -->
 ## 🚀 How To Run
 On both Windows and Linux, the execution is done from an IDE of your choice, to run a Java API. The Project will be running locally on port 8080.
+
