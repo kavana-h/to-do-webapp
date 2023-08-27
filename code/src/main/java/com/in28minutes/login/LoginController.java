@@ -17,6 +17,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage() {
+		//new comment
 		return "login";
 	}
 
